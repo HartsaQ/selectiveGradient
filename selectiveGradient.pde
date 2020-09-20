@@ -29,3 +29,19 @@ void draw() {
   line(0, mouseY, width, mouseY);
   line(mouseX,0, mouseX, height);
 }
+
+void mouseClicked() {
+  println("clicked: " + mouseX + " " + mouseY);
+}
+
+void mouseDragged() {
+  println("dragged: " + mouseX + " " + mouseY);
+}
+
+void mousePressed() {
+  println("pressed: " + mouseX + " " + mouseY);
+}
+
+void mouseReleased() {
+  println("released: " + mouseX + " " + mouseY);
+}
