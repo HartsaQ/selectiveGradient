@@ -69,8 +69,6 @@ void mouseDragged() {
 void mousePressed() {
   startX = mouseX; 
   startY = mouseY;
-  println("pressed1: " + startX + " " + startY);
-  println("pressed2: " + startX/(float)scaleRatio + " " + startY/(float)scaleRatio);
 }
 
 //calculate mouse accelleration and direction (up, down, left or right)
@@ -78,15 +76,11 @@ void mousePressed() {
 void mouseReleased() {
   int endX = mouseX;
   int endY = mouseY;
-  println("released1: " + endX + " " + endY);
-  println("released2: " + endX/(float)scaleRatio + " " + endY/(float)scaleRatio);
   //to prevent unexpected event and behaviour
   int xDifference = endX - startX;
   int yDifference = endY - startY;
-  println("released3: " + xDifference + " " + yDifference);
   //create gradients towards the largest change
   int direction = (abs(xDifference) >= abs(yDifference)? HORIZONTAL: VERTICAL);
-  println("released4: " + direction);
   if(direction == HORIZONTAL) {
     alterImage(direction, floor(startX/scaleRatio), floor(endX/scaleRatio));
   } else if(direction == VERTICAL) {
